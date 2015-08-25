@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aOt-dp-8Ws">
-                                <rect key="frame" x="180" y="84" width="300" height="400"/>
+                                <rect key="frame" x="150" y="86" width="300" height="400"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="3at-um-xMo"/>
                                     <constraint firstAttribute="height" constant="400" id="q8o-xt-sZw"/>
@@ -28,8 +28,8 @@
                             </containerView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="aOt-dp-8Ws" secondAttribute="centerX" constant="-30" id="PrC-JK-GvC"/>
-                            <constraint firstItem="aOt-dp-8Ws" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="x1w-Kj-Lwy"/>
+                            <constraint firstAttribute="centerX" secondItem="aOt-dp-8Ws" secondAttribute="centerX" id="PrC-JK-GvC"/>
+                            <constraint firstItem="aOt-dp-8Ws" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="x1w-Kj-Lwy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ly6-PK-VJK"/>
