@@ -17,7 +17,7 @@ class CardViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        cardImageView.layer.cornerRadius = 5
+//        cardImageView.layer.cornerRadius = 50
         
     }
 

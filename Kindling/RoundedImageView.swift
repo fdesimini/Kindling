@@ -10,19 +10,30 @@ import UIKit
 
 class RoundedImageView: UIImageView {
 
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
+  
+    @IBInspectable var cornerRadius: CGFloat = 0 {
+        
+        didSet {
+            
+            layer.cornerRadius = cornerRadius
+            layer.masksToBounds = cornerRadius > 0
+            
+        }
+        
     }
-    */
-
+    
     override func awakeFromNib() {
     print("hello world")
+   
+        layer.cornerRadius = cornerRadius
+        cornerRadius = frame.size.width/4
+        cornerRadius = frame.size.height/2
         
-
+        clipsToBounds = true
+        layer.borderColor = UIColor.grayColor().CGColor
+        layer.borderWidth = 8.0
         
+    
         
         
     }
