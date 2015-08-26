@@ -14,7 +14,8 @@
 		397FD0721B8CD56F00D64EF3 /* KindlingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FD0711B8CD56F00D64EF3 /* KindlingTests.swift */; };
 		397FD07D1B8CD9B600D64EF3 /* RootPresentationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FD07C1B8CD9B600D64EF3 /* RootPresentationViewController.swift */; };
 		397FD07F1B8CDD5700D64EF3 /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FD07E1B8CDD5700D64EF3 /* CardViewController.swift */; };
-		397FD0811B8CDF3300D64EF3 /* LayerStuffView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FD0801B8CDF3300D64EF3 /* LayerStuffView.swift */; };
+		397FD0831B8CE6F300D64EF3 /* CardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FD0821B8CE6F300D64EF3 /* CardLayer.swift */; };
+		397FD0851B8CEABE00D64EF3 /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 397FD0841B8CEABE00D64EF3 /* RoundedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,8 @@
 		397FD0711B8CD56F00D64EF3 /* KindlingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KindlingTests.swift; sourceTree = "<group>"; };
 		397FD07C1B8CD9B600D64EF3 /* RootPresentationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootPresentationViewController.swift; sourceTree = "<group>"; };
 		397FD07E1B8CDD5700D64EF3 /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
-		397FD0801B8CDF3300D64EF3 /* LayerStuffView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayerStuffView.swift; sourceTree = "<group>"; };
+		397FD0821B8CE6F300D64EF3 /* CardLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardLayer.swift; sourceTree = "<group>"; };
+		397FD0841B8CEABE00D64EF3 /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,7 @@
 				397FD0621B8CD56F00D64EF3 /* Images.xcassets */,
 				397FD0641B8CD56F00D64EF3 /* LaunchScreen.xib */,
 				397FD0591B8CD56F00D64EF3 /* Supporting Files */,
-				397FD0801B8CDF3300D64EF3 /* LayerStuffView.swift */,
+				397FD0841B8CEABE00D64EF3 /* RoundedImageView.swift */,
 			);
 			path = Kindling;
 			sourceTree = "<group>";
@@ -122,6 +124,7 @@
 			children = (
 				397FD07C1B8CD9B600D64EF3 /* RootPresentationViewController.swift */,
 				397FD07E1B8CDD5700D64EF3 /* CardViewController.swift */,
+				397FD0821B8CE6F300D64EF3 /* CardLayer.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -227,9 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				397FD07D1B8CD9B600D64EF3 /* RootPresentationViewController.swift in Sources */,
+				397FD0851B8CEABE00D64EF3 /* RoundedImageView.swift in Sources */,
 				397FD05C1B8CD56F00D64EF3 /* AppDelegate.swift in Sources */,
 				397FD07F1B8CDD5700D64EF3 /* CardViewController.swift in Sources */,
-				397FD0811B8CDF3300D64EF3 /* LayerStuffView.swift in Sources */,
+				397FD0831B8CE6F300D64EF3 /* CardLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
