@@ -29,13 +29,25 @@
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="aOt-dp-8Ws" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="N3s-yD-EMw"/>
                             <constraint firstAttribute="centerX" secondItem="aOt-dp-8Ws" secondAttribute="centerX" id="PrC-JK-GvC"/>
-                            <constraint firstItem="aOt-dp-8Ws" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="22" id="x1w-Kj-Lwy"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="tro-8j-8gL" appends="YES" id="kwg-R5-eAK"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="ly6-PK-VJK"/>
+                    <connections>
+                        <outlet property="cardContainer" destination="aOt-dp-8Ws" id="h7f-hv-FCC"/>
+                        <outlet property="horizontalCentering" destination="PrC-JK-GvC" id="dFw-Zs-yck"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="tro-8j-8gL">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="EsI-tz-vOV"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1252" y="387"/>
         </scene>
@@ -96,6 +108,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="1cp-B0-dKq" firstAttribute="top" secondItem="4gn-OM-SI0" secondAttribute="bottom" constant="8" id="3Yl-z7-lXR"/>
                             <constraint firstAttribute="centerX" secondItem="0bb-El-dkF" secondAttribute="centerX" id="Cvy-bh-hfJ"/>

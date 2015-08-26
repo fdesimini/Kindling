@@ -15,6 +15,7 @@ class CardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        println("viewDidLoad on CardViewController")
         // Do any additional setup after loading the view.
         
 //        cardImageView.layer.cornerRadius = 50
