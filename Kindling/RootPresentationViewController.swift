@@ -10,14 +10,16 @@ import UIKit
 
 class RootPresentationViewController: UIViewController {
     
-    @IBAction func testPanGestureButton(sender: AnyObject) {
-        
-        println("button has been pressed")
-        
-    }
+    
+
+    //was using this to test PanGestures - went down wrong track with this
+//    @IBAction func testPanGestureButton(sender: AnyObject) {
+//        
+//        println("button has been pressed")
+//        
+//    }
 
     @IBOutlet weak var cardContainer: UIView!
-    
     
     @IBOutlet weak var horizontalCentering: NSLayoutConstraint!
     
@@ -31,22 +33,34 @@ class RootPresentationViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didPan (sender:UIGestureRecognizer){
+    @IBAction func didPan (sender:UIPanGestureRecognizer){
         
-        println("Pan gesture has been hit on the viewController")
+//        println("Pan gesture has been hit on the viewController")
+        let defaultState = sender.translationInView(view)
+
+        
+        switch sender.state {
+        case UIGestureRecognizerState.Began:
+            println("Gesture Started")
+        case UIGestureRecognizerState.Cancelled:
+            println("User cancelled this")
+        case UIGestureRecognizerState.Ended:
+            println("Gesture has ended")
+            horizontalCentering.constant = defaultState.x / 100
+            
+        default:
+            println("all other touches")
+            
+            horizontalCentering.constant = -defaultState.x
+          
+            //why do we need this function called?
+            view.layoutIfNeeded()
+            
+        }
         
     }
-
-
     
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+
 
 }
