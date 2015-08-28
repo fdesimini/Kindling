@@ -10,15 +10,17 @@ import UIKit
 
 class RootPresentationViewController: UIViewController {
     
+    enum SelectionState {
+        
+        case NoSelection
+        case LikeSelection
+        case DislikeSelection
     
-
-    //was using this to test PanGestures - went down wrong track with this
-//    @IBAction func testPanGestureButton(sender: AnyObject) {
-//        
-//        println("button has been pressed")
-//        
-//    }
-
+    }
+    
+    var selectionState = SelectionState.NoSelection
+    
+ 
     @IBOutlet weak var cardContainer: UIView!
     
     @IBOutlet weak var horizontalCentering: NSLayoutConstraint!
@@ -42,15 +44,15 @@ class RootPresentationViewController: UIViewController {
         case UIGestureRecognizerState.Began:
             println("Gesture Started")
  
-        case UIGestureRecognizerState.Changed:
-            println("changed state")
+//        case UIGestureRecognizerState.Changed:
+//            println("changed state")
             
-           if abs(translation.x) < view.bounds.size.width / 2
-          
-           {
-                horizontalCentering.constant = -translation.x
-                view.layoutIfNeeded()
-            }
+//           if abs(translation.x) < view.bounds.size.width / 2
+//          
+//           {
+//                horizontalCentering.constant = -translation.x
+//                view.layoutIfNeeded()
+//            }
             
             
         case UIGestureRecognizerState.Ended:
@@ -67,16 +69,30 @@ class RootPresentationViewController: UIViewController {
         default:
             println("all other touches")
             
-            horizontalCentering.constant = -translation.x
-          
-//            //why do we need this function called?
-//            view.layoutIfNeeded()
+//            horizontalCentering.constant = -translation.x
             
+            if abs(translation.x) < view.bounds.size.width / 2
+                
+            {
+                horizontalCentering.constant = -translation.x
+                view.layoutIfNeeded()
+            
+            } else {
+                if ((view.bounds.size.width)/2 > view.bounds.size.width){
+                    println("this is now been moved to the left")
+                } else if ((view.bounds.size.width)/2 < view.bounds.size.width){
+                    println("This has been moved to the right")
+                } else {
+                    println("nothing to see here")
+                }
+            }
+
+            }
+          
         }
-        
-    }
+
+}
     
 
 
 
-}
