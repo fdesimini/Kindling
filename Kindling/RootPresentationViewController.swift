@@ -35,18 +35,34 @@ class RootPresentationViewController: UIViewController {
     
     @IBAction func didPan (sender:UIPanGestureRecognizer){
         
-//        println("Pan gesture has been hit on the viewController")
         let defaultState = sender.translationInView(view)
-
         
         switch sender.state {
         case UIGestureRecognizerState.Began:
             println("Gesture Started")
-        case UIGestureRecognizerState.Cancelled:
+ 
+        case UIGestureRecognizerState.Changed:
             println("User cancelled this")
+            
+
+           if abs(defaultState.x) < view.bounds.size.width / 2
+          
+           {
+                horizontalCentering.constant = -defaultState.x
+                view.layoutIfNeeded()
+            }
+            
+            
         case UIGestureRecognizerState.Ended:
             println("Gesture has ended")
-            horizontalCentering.constant = defaultState.x / 100
+            
+            UIView.animateWithDuration(0.3, animations: { () -> Void in
+               self.horizontalCentering.constant = 0
+                self.view.layoutIfNeeded()
+                }, completion: {
+                    (complete) -> Void in
+
+            })
             
         default:
             println("all other touches")

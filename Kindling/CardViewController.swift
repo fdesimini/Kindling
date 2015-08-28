@@ -18,7 +18,12 @@ class CardViewController: UIViewController {
         println("viewDidLoad on CardViewController")
         // Do any additional setup after loading the view.
         
-//        cardImageView.layer.cornerRadius = 50
+        self.view.layer.cornerRadius = 10
+        self.view.layer.shadowOpacity = 0.5
+        self.view.layer.shadowColor = UIColor.blackColor().CGColor
+        self.view.layer.shadowOffset = CGSize(width: 10.0, height: 10.0)
+        self.view.clipsToBounds = false
+        
         
     }
 

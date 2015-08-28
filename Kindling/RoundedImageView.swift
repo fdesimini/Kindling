@@ -33,13 +33,6 @@ class RoundedImageView: UIImageView {
         layer.borderColor = UIColor.grayColor().CGColor
         layer.borderWidth = 8.0
         
-//        layer.shadowOpacity = 0.2
-//        layer.shadowOffset = CGSize(width: 10.0, height: 10.0)
-//        layer.shadowColor = UIColor.redColor().CGColor
-        
-        
-        
-    
         
         
     }
