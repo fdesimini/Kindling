@@ -40,6 +40,8 @@
                     <connections>
                         <outlet property="cardContainer" destination="aOt-dp-8Ws" id="h7f-hv-FCC"/>
                         <outlet property="horizontalCentering" destination="PrC-JK-GvC" id="dFw-Zs-yck"/>
+                        <segue destination="cAo-3G-2jJ" kind="show" identifier="LikeSegue" id="pZz-L6-e9h"/>
+                        <segue destination="bUA-nq-0cv" kind="show" identifier="DisLikeSegue" id="kCr-g8-WVa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -50,6 +52,72 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1252" y="387"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1WR-8i-owl">
+            <objects>
+                <viewController id="cAo-3G-2jJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TIy-Io-f7P"/>
+                        <viewControllerLayoutGuide type="bottom" id="YjM-8P-k0d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cvQ-Ft-Q2X">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Really LIke Me!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsD-IV-LDu">
+                                <rect key="frame" x="222" y="289" width="156" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="gda-Y1-DRS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.79607843140000001" green="0.12549019610000001" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="CsD-IV-LDu" secondAttribute="centerX" id="7Xv-DO-DjF"/>
+                            <constraint firstAttribute="centerY" secondItem="CsD-IV-LDu" secondAttribute="centerY" constant="0.5" id="Ypu-mZ-gw7"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b7s-oB-Zny" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2003" y="-49"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jd8-8g-Diz">
+            <objects>
+                <viewController id="bUA-nq-0cv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tg8-rt-43A"/>
+                        <viewControllerLayoutGuide type="bottom" id="cOG-KC-cRa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ivk-vG-IZT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I've Always Hated You!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwY-2l-3ee">
+                                <rect key="frame" x="207" y="289" width="186" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="186" id="wWI-Ox-vyj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1215686277" green="0.28627452250000002" blue="0.49019607900000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="WwY-2l-3ee" secondAttribute="centerX" id="CJJ-XZ-yEg"/>
+                            <constraint firstAttribute="centerY" secondItem="WwY-2l-3ee" secondAttribute="centerY" constant="0.5" id="nS1-LG-mFc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UlH-ZW-1uS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2003" y="846"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EaJ-ae-MCa">

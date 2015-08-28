@@ -52,8 +52,10 @@ class RootPresentationViewController: UIViewController {
             
             if selectionState == SelectionState.DislikeSelection{
                 view.backgroundColor = UIColor.redColor()
+                self.performSegueWithIdentifier("DisLikeSegue", sender: self)
             } else if selectionState == SelectionState.LikeSelection{
                 view.backgroundColor = UIColor.purpleColor()
+                self.performSegueWithIdentifier("LikeSegue", sender: self)
             } else if selectionState == SelectionState.NoSelection{
                 view.backgroundColor = UIColor.blackColor()
             }
