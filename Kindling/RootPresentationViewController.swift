@@ -58,7 +58,9 @@ class RootPresentationViewController: UIViewController {
                     (complete) -> Void in
                     
                     if self.selectionState == SelectionState.DislikeSelection{
+                        //did this in an earlier stage...not relevant any more
                         self.view.backgroundColor = UIColor.redColor()
+                        //segues on completion
                         self.performSegueWithIdentifier("DisLikeSegue", sender: self)
                     } else if self.selectionState == SelectionState.LikeSelection{
                         self.view.backgroundColor = UIColor.purpleColor()
