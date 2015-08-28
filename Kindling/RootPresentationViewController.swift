@@ -50,22 +50,24 @@ class RootPresentationViewController: UIViewController {
         case UIGestureRecognizerState.Ended:
             println("Gesture has ended")
             
-            if selectionState == SelectionState.DislikeSelection{
-                view.backgroundColor = UIColor.redColor()
-                self.performSegueWithIdentifier("DisLikeSegue", sender: self)
-            } else if selectionState == SelectionState.LikeSelection{
-                view.backgroundColor = UIColor.purpleColor()
-                self.performSegueWithIdentifier("LikeSegue", sender: self)
-            } else if selectionState == SelectionState.NoSelection{
-                view.backgroundColor = UIColor.blackColor()
-            }
-            
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                self.horizontalCentering.constant = 0
                 self.view.layoutIfNeeded()
                 }, completion: {
                     (complete) -> Void in
+                    
+                    if self.selectionState == SelectionState.DislikeSelection{
+                        self.view.backgroundColor = UIColor.redColor()
+                        self.performSegueWithIdentifier("DisLikeSegue", sender: self)
+                    } else if self.selectionState == SelectionState.LikeSelection{
+                        self.view.backgroundColor = UIColor.purpleColor()
+                        self.performSegueWithIdentifier("LikeSegue", sender: self)
+                    } else if self.selectionState == SelectionState.NoSelection{
+                        self.view.backgroundColor = UIColor.blackColor()
+                    }
+                    
+
 
             })
         
