@@ -35,20 +35,20 @@ class RootPresentationViewController: UIViewController {
     
     @IBAction func didPan (sender:UIPanGestureRecognizer){
         
-        let defaultState = sender.translationInView(view)
+        // translationInView is translation in the coordinate system of the specified view
+        let translation = sender.translationInView(view)
         
         switch sender.state {
         case UIGestureRecognizerState.Began:
             println("Gesture Started")
  
         case UIGestureRecognizerState.Changed:
-            println("User cancelled this")
+            println("changed state")
             
-
-           if abs(defaultState.x) < view.bounds.size.width / 2
+           if abs(translation.x) < view.bounds.size.width / 2
           
            {
-                horizontalCentering.constant = -defaultState.x
+                horizontalCentering.constant = -translation.x
                 view.layoutIfNeeded()
             }
             
@@ -67,10 +67,10 @@ class RootPresentationViewController: UIViewController {
         default:
             println("all other touches")
             
-            horizontalCentering.constant = -defaultState.x
+            horizontalCentering.constant = -translation.x
           
-            //why do we need this function called?
-            view.layoutIfNeeded()
+//            //why do we need this function called?
+//            view.layoutIfNeeded()
             
         }
         
