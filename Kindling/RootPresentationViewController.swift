@@ -41,22 +41,23 @@ class RootPresentationViewController: UIViewController {
         let translation = sender.translationInView(view)
         
         switch sender.state {
+            
+        //this case uses the .Began property of UIPanGestureRecognizer
         case UIGestureRecognizerState.Began:
             println("Gesture Started")
- 
-//        case UIGestureRecognizerState.Changed:
-//            println("changed state")
-            
-//           if abs(translation.x) < view.bounds.size.width / 2
-//          
-//           {
-//                horizontalCentering.constant = -translation.x
-//                view.layoutIfNeeded()
-//            }
-            
-            
+        
+        //this case uses the .Ended property of UIPanGestureRecognizer
         case UIGestureRecognizerState.Ended:
             println("Gesture has ended")
+            
+            if selectionState == SelectionState.DislikeSelection{
+                view.backgroundColor = UIColor.redColor()
+            } else if selectionState == SelectionState.LikeSelection{
+                view.backgroundColor = UIColor.purpleColor()
+            } else if selectionState == SelectionState.NoSelection{
+                view.backgroundColor = UIColor.blackColor()
+            }
+            
             
             UIView.animateWithDuration(0.3, animations: { () -> Void in
                self.horizontalCentering.constant = 0
@@ -65,12 +66,14 @@ class RootPresentationViewController: UIViewController {
                     (complete) -> Void in
 
             })
-            
+        
+        //this is the default case...I could also add a lot of this functionality in the .Changed 
+        //property of UIPanGestureRecognizer (as per the James example of Friday lecture)
+        
         default:
             println("all other touches")
             
-//            horizontalCentering.constant = -translation.x
-            
+           //need to explain what this code does
             if abs(translation.x) < view.bounds.size.width / 2
                 
             {
@@ -78,12 +81,19 @@ class RootPresentationViewController: UIViewController {
                 view.layoutIfNeeded()
             
             } else {
-                if ((view.bounds.size.width)/2 > view.bounds.size.width){
-                    println("this is now been moved to the left")
-                } else if ((view.bounds.size.width)/2 < view.bounds.size.width){
-                    println("This has been moved to the right")
+                
+                if ((view.bounds.size.width)/2 + translation.x > view.bounds.size.width){
+                    println("this has been Liked")
+                    selectionState = SelectionState.LikeSelection
+                    
+                } else if ((view.bounds.size.width)/2 + translation.x < 0){
+                    println("This has been DisLiked")
+                    selectionState = SelectionState.DislikeSelection
+                    
                 } else {
-                    println("nothing to see here")
+                    println("move along, nothing to see here")
+                    selectionState = SelectionState.NoSelection
+                    
                 }
             }
 
